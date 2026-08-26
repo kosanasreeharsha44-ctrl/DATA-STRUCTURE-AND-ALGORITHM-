@@ -1,1 +1,78 @@
+//Question 1
 
+#include<stdio.h>
+
+int main(){
+int n,i,key,comparisons=0;
+int found=0;
+printf("Enter the no of employee id\n");
+scanf("%d",&n);
+int id[n];
+printf("Enter the id in ascending order\n");
+for(i=0;i<n;i++){
+scanf("%d",&id[i]);
+}
+printf("Enter the employee id\n");
+scanf("%d",&key);
+int high=n-1,low=0;
+while(low<=high){
+int mid=(high+low)/2;
+comparisons++;
+if(id[mid]==key){
+found=1;
+printf("Employee id is found at position %d\n",mid+1);
+break;
+}
+else if(id[mid]>key){
+high=mid-1;
+}
+else{
+low=mid+1;
+}
+}
+if(!found)
+printf("employee id not found\n");
+printf("No of comparisons=%d\n",comparisons);
+return 0;
+}
+
+
+//questions 2
+
+#include<stdio.h>
+
+int main()
+{
+int n,i,j,key,shift=0;
+printf("Enter number of marks: ");
+scanf("%d",&n);
+int a[n];
+printf("Enter the marks:\n");
+for(i=0;i<n;i++)
+scanf("%d",&a[i]);
+for(i=1;i<n;i++)
+{
+key=a[i];
+j=i-1;
+
+while(j>=0&&a[j]>key)
+{
+a[j+1]=a[j];
+shift++;
+j--;
+}
+
+a[j+1]=key;
+printf("After pass %d: ",i);
+for(int k=0;k<n;k++)
+printf("%d ",a[k]);
+printf("\n");
+}
+
+printf("Sorted list: ");
+for(i=0;i<n;i++)
+printf("%d ",a[i]);
+printf("\nTotal shifts=%d",shift);
+
+return 0;
+}
