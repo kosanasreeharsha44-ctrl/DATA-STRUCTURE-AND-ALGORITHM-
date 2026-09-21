@@ -1,8 +1,10 @@
 #include<stdio.h>
 #include<ctype.h>
 int priority(char c){
-    if(c=='+'||c=='-') return 1;
-    if(c=='*'||c=='/') return 2;
+    if(c=='+'||c=='-') 
+        return 1;
+    if(c=='*'||c=='/') 
+        return 2;
     return 0;
 }
 int main(){
@@ -19,8 +21,10 @@ int main(){
     printf("\nPostfix Expression: ");
     for(i=0;infix[i]!='\0';i++){
         char c=infix[i];
-        if(isalnum(c)) printf("%c ",c);
-        else if(c=='(') stack[++top]=c;
+        if(isalnum(c)) 
+            printf("%c ",c);
+        else if(c=='(') 
+            stack[++top]=c;
         else if(c==')'){
             while(top>=0&&stack[top]!='(') printf("%c ",stack[top--]);
             top--;
