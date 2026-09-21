@@ -3,7 +3,10 @@
 int queue[SIZE],front=-1,rear=-1;
 void printQueue(){
     int i;
-    if(front==-1){printf("Printer Queue: Empty\n");return;}
+    if(front==-1){
+        printf("Printer Queue: Empty\n");
+        return;
+    }
     printf("Printer Queue: ");
     i=front;
     while(1){
@@ -24,10 +27,15 @@ void addRequest(int x){
     printf("Print Request%d added.\n",x);
 }
 void completeRequest(){
-    if(front==-1){printf("Printer Queue Empty.\n");return;}
+    if(front==-1){
+        printf("Printer Queue Empty.\n");
+        return;
+    }
     printf("Print Request%d completed.\n",queue[front]);
-    if(front==rear) front=rear=-1;
-    else front=(front+1)%SIZE;
+    if(front==rear) 
+        front=rear=-1;
+    else 
+        front=(front+1)%SIZE;
 }
 int main(){
     printf("COLLEGE PRINTER REQUEST SYSTEM\n\n");
