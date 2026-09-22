@@ -6,7 +6,8 @@ struct Song{
     struct Song*next;
 };
 void addSong(struct Song**head,char name[],int pos){
-    struct Song*n=malloc(sizeof(struct Song)),*p=*head;
+    struct Song*n=malloc(sizeof(struct Song)),
+    *p=*head;
     strcpy(n->name,name);
     n->next=NULL;
     if(pos==1||!*head){
@@ -14,19 +15,24 @@ void addSong(struct Song**head,char name[],int pos){
         *head=n;
         return;
     }
-    while(p->next&&pos>2){p=p->next;pos--;}
+    while(p->next&&pos>2){
+        p=p->next;pos--;
+    }
     n->next=p->next;
     p->next=n;
 }
 void deleteSong(struct Song**head,int pos){
     struct Song*p=*head,*t;
-    if(!p)return;
+    if(!p)
+        return;
     if(pos==1){
         *head=p->next;
         free(p);
         return;
     }
-    while(p->next&&pos>2){p=p->next;pos--;}
+    while(p->next&&pos>2){
+        p=p->next;pos--;
+    }
     if(p->next){
         t=p->next;
         p->next=t->next;
