@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+
 struct Passenger{
     int id;
     char name[40];
@@ -34,7 +35,8 @@ void deletePassenger(struct Passenger**head,int id){
             }
             p->prev->next=p->next;
             p->next->prev=p->prev;
-            if(p==*head)*head=p->next;
+            if(p==*head)
+                *head=p->next;
             free(p);
             return;
         }
@@ -44,7 +46,8 @@ void deletePassenger(struct Passenger**head,int id){
 void forward(struct Passenger*head){
     struct Passenger*p=head;
     printf("Forward Passenger List:\n");
-    if(!p)return;
+    if(!p)
+        return;
     do{
         printf("%d - %s\n",p->id,p->name);
         p=p->next;
@@ -53,7 +56,8 @@ void forward(struct Passenger*head){
 void backward(struct Passenger*head){
     struct Passenger*p;
     printf("Backward Passenger List:\n");
-    if(!head)return;
+    if(!head)
+        return;
     p=head->prev;
     do{
         printf("%d - %s\n",p->id,p->name);
