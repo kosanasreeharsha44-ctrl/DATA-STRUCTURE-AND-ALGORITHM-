@@ -71,13 +71,13 @@ These records are stored in the same bucket using separate chaining, which conne
 8. Display the result.
 9. Repeat until the user selects Exit.
 
-Time Complexity
+**Time Complexity**
 
-Operation| Average Case| Worst Case
-Insertion| O(1)| O(n)
-Searching| O(1)| O(n)
-Updating| O(1)| O(n)
-Deletion| O(1)| O(n)
+Operation    Average Case    Worst Case
+Insertion     O(1)             O(n)
+Searching     O(1)             O(n)
+Updating      O(1)             O(n)
+Deletion      O(1)             O(n)
 
 Note: These complexities assume a well-distributed hash function for average-case performance.
 
