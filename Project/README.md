@@ -73,15 +73,15 @@ These records are stored in the same bucket using separate chaining, which conne
 
 **Time Complexity**
 
-Operation    Average Case    Worst Case
+Operation        Average Case        Worst Case
 
-Insertion     O(1)             O(n)
+Insertion         O(1)                 O(n)
 
-Searching     O(1)             O(n)
+Searching         O(1)                 O(n)
 
-Updating      O(1)             O(n)
+Updating          O(1)                 O(n)
 
-Deletion      O(1)             O(n)
+Deletion          O(1)                 O(n)
 
 Note: These complexities assume a well-distributed hash function for average-case performance.
 
